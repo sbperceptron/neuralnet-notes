@@ -73,3 +73,4 @@ problem.
 Residual networks allow training of such deep networks by constructing the network
 through modules called residual models 
 
+![" Residual Network module "](https://github.com/sbperceptron/neuralnet-notes/blob/master/residual%20learning.png)
