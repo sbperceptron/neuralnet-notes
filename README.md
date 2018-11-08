@@ -32,7 +32,7 @@ at a lower cost. Also 3*3 ketnels help in retaining finer level properties of im
 
   The vgg convolutional layers are followed by 3 fully connected layers.
 
-# Googlenet/inception:
+# GoogleNet/inception:
   Best performance on image net, but deployement onto most modern gpu is a problem 
 because of huge computational requirements, both in terms of memory and time. 
 it is inefficient due to large width of convolutional layers. In vgg cinv operation 
