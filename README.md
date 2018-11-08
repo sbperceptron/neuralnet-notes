@@ -33,44 +33,60 @@ eg: 3 3*3 conv filters have 3*9C^2 parameters and a single 7*7 filter will have
 The vgg convolutional layers are followed by 3 fully connected layers.
 
 # Googlenet/inception:
-Best performance on image net, but deployement onto most modern gpu is a problem 
+  Best performance on image net, but deployement onto most modern gpu is a problem 
 because of huge computational requirements, both in terms of memory and time. 
 it is inefficient due to large width of convolutional layers. In vgg cinv operation 
 every output channel is connected to every input channel and so it is called dense 
 connection architecture.
 
-" Most of the activations in a deep network are either unnecessaary ot redundant
-because of correlations between them."
+  *" Most of the activations in a deep network are either unnecessaary ot redundant
+  *because of correlations between them."
 
-Therefore the most efficient architecture of a deep network will have a sparse 
+  Therefore the most efficient architecture of a deep network will have a sparse 
 connection between the activations, which impies that all output channels will
 not have a cinnection with all input channels. there are techniques to prune 
 out such connections which would result in asparse weight connection. But kernels 
 for sparse matrix multiplication are not optimized in cuda for GPU.
 
-so google net devised a module called inception module that approximates a sparse 
+  So google net devised a module called inception module that approximates a sparse 
 CNN with a normal dense construction. Also, it uses convolutions of different sizes 
 to capture details at varied scales 
 
-Another salient point about the module is that it has a so called bottleneck layer 
+  Another salient point about the module is that it has a so called bottleneck layer 
 . It helps in the massive reduction of the computation requirement.
 
-Another change that Google net made, was to replace fc layers at the wnd with a 
+  Another change that Google net made, was to replace fc layers at the wnd with a 
 simple global average pooling after the last convloutional layer. This drastically
 reduces the total number of parameters without reducing the accuracy.
 
 !["inception module"](https://github.com/sbperceptron/neuralnet-notes/blob/master/inception_module.png)
 
 # Residual networks
-It can be generalised that increasing the depth should increase the accuracy of 
+  It can be generalised that increasing the depth should increase the accuracy of 
 the network. But the imminent problem with increased depth is that the signal 
 required to change the weights, through back propagation becomes very small at earlier 
-layers. This is called vanishing gradient. the second problem with training deeper
-networks is performing the optimization on huge parameter space and therefore 
+layers. This is called vanishing gradient. 
+
+The second problem with training deeper networks is performing the optimization on huge parameter space and therefore 
 naively adding the layers leading to higher training error. This is called degradation
 problem.
 
-Residual networks allow training of such deep networks by constructing the network
+  Residual networks allow training of such deep networks by constructing the network
 through modules called residual models 
 
 ![" Residual Network module "](https://github.com/sbperceptron/neuralnet-notes/blob/master/residual%20learning.png)
+
+ It can be defined as a shortcut or a skip connection from the earlier layers to 
+ layers much deeper in the network. The skip connection can be used to pass the 
+ activation signal to the nth layer from n-k th layer( k is the number of layers skipped). 
+ The activation signal is added to the nth layer before performig the activation
+ 
+ By this inclusion we are able to reduce the error value with increased number of 
+ layers in a deep network
+ 
+ The residual net similar to the Google net uses global average pooling followed 
+ by the classification layer. The architecture is similar to the VGGNet consisting 
+ mostly of 3X3 filters except we have the additional shortcut connections between
+ the networks.
+ 
+ 
