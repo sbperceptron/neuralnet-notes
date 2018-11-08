@@ -59,6 +59,17 @@ Another change that Google net made, was to replace fc layers at the wnd with a
 simple global average pooling after the last convloutional layer. This drastically
 reduces the total number of parameters without reducing the accuracy.
 
+!["inception module"](https://github.com/sbperceptron/neuralnet-notes/blob/master/inception_module.png)
 
+# Residual networks
+It can be generalised that increasing the depth should increase the accuracy of 
+the network. But the imminent problem with increased depth is that the signal 
+required to change the weights, through back propagation becomes very small at earlier 
+layers. This is called vanishing gradient. the second problem with training deeper
+networks is performing the optimization on huge parameter space and therefore 
+naively adding the layers leading to higher training error. This is called degradation
+problem.
 
+Residual networks allow training of such deep networks by constructing the network
+through modules called residual models 
 
