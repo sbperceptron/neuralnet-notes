@@ -61,6 +61,9 @@ reduces the total number of parameters without reducing the accuracy.
 
 !["inception module"](https://github.com/sbperceptron/neuralnet-notes/blob/master/inception_module.png)
 
+Examples: YOLO neural network
+!["YOLOV2"](https://pjreddie.com/media/files/papers/YOLO9000.pdf)
+
 # Residual networks
   It can be generalised that increasing the depth should increase the accuracy of 
 the network. But the imminent problem with increased depth is that the signal 
