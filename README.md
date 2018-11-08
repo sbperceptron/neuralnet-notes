@@ -24,5 +24,5 @@ Multiple small sized kernels are better than the one with single large
 sized kernel because multiple non lineat layers increases the depth of 
 the network which enables it to learn more complix features, and that to a
 at a lower cost
-!["VGG16 Architecture"]('https://github.com/sbperceptron/neuralnet-notes/blob/master/VGGNet.png')
+!["VGG16 Architecture"](https://github.com/sbperceptron/neuralnet-notes/blob/master/VGGNet.png)
 
