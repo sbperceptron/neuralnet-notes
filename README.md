@@ -7,8 +7,8 @@ notes on neuralnetworks
 3. relu activations
 4. dropout layer after fully conected layer
 
-  # dropout layers 
-Due to dropout layer, different sets of neurons are switched off, represent 
+# 1. Dropout layers 
+  Due to dropout layer, different sets of neurons are switched off, represent 
 different architecture and all these different architectures are trained
 in parallel with weight given to each subset and the summation of weights 
 being one . For n neurons attached to dropout , the number of subset architectires 
@@ -20,17 +20,17 @@ among themselves thereby enabling them to develop meamningful features,
 independent of others.
 
 # VGG 16
-Multiple small sized kernels are better than the one with single large 
+  Multiple small sized kernels are better than the one with single large 
 sized kernel because multiple non lineat layers increases the depth of 
 the network which enables it to learn more complix features, and that to a
 at a lower cost. Also 3*3 ketnels help in retaining finer level properties of image
 
-eg: 3 3*3 conv filters have 3*9C^2 parameters and a single 7*7 filter will have
+  eg: 3 3*3 conv filters have 3*9C^2 parameters and a single 7*7 filter will have
 49C^2 parameters
 
 !["VGG16 Architecture"](https://github.com/sbperceptron/neuralnet-notes/blob/master/VGGNet.png)
 
-The vgg convolutional layers are followed by 3 fully connected layers.
+  The vgg convolutional layers are followed by 3 fully connected layers.
 
 # Googlenet/inception:
   Best performance on image net, but deployement onto most modern gpu is a problem 
@@ -67,7 +67,7 @@ the network. But the imminent problem with increased depth is that the signal
 required to change the weights, through back propagation becomes very small at earlier 
 layers. This is called vanishing gradient. 
 
-The second problem with training deeper networks is performing the optimization on huge parameter space and therefore 
+  The second problem with training deeper networks is performing the optimization on huge parameter space and therefore 
 naively adding the layers leading to higher training error. This is called degradation
 problem.
 
@@ -76,15 +76,15 @@ through modules called residual models
 
 ![" Residual Network module "](https://github.com/sbperceptron/neuralnet-notes/blob/master/residual%20learning.png)
 
- It can be defined as a shortcut or a skip connection from the earlier layers to 
+  It can be defined as a shortcut or a skip connection from the earlier layers to 
  layers much deeper in the network. The skip connection can be used to pass the 
  activation signal to the nth layer from n-k th layer( k is the number of layers skipped). 
  The activation signal is added to the nth layer before performig the activation
  
- By this inclusion we are able to reduce the error value with increased number of 
+  By this inclusion we are able to reduce the error value with increased number of 
  layers in a deep network
  
- The residual net similar to the Google net uses global average pooling followed 
+  The residual net similar to the Google net uses global average pooling followed 
  by the classification layer. The architecture is similar to the VGGNet consisting 
  mostly of 3X3 filters except we have the additional shortcut connections between
  the networks.
