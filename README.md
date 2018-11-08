@@ -88,5 +88,5 @@ through modules called residual models
  by the classification layer. The architecture is similar to the VGGNet consisting 
  mostly of 3X3 filters except we have the additional shortcut connections between
  the networks.
- 
+ !["Res Net  Example"](https://github.com/sbperceptron/neuralnet-notes/blob/master/resnet_example.png)
  
