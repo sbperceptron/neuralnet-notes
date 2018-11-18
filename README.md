@@ -1,9 +1,9 @@
 # Deep learning software libraries
-Theano 
-Torch
-Caffe
-MXnet
-Tesorflow
+1. Theano 
+2. Torch
+3. Caffe
+4. MXnet
+5. Tesorflow
 # Neuralnet-notes
 notes on neuralnetworks
 
@@ -106,4 +106,5 @@ though the current networks seem large from computational point of view, in fact
 
 RNNs such as LSTM sequence model used to model relationship between sequences and other sequences rather than fixed inputs.
 
-Reinforcement learning for making autonomous systems learn to perform tasks by trial and error
+Reinforcement learning for making autonomous systems learn to perform tasks by trial and error.
+
