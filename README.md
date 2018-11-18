@@ -98,7 +98,8 @@ through modules called residual models
  mostly of 3X3 filters except we have the additional shortcut connections between
  the networks.
  !["Res Net  Example"](https://github.com/sbperceptron/neuralnet-notes/blob/master/resnet_example.png)
- 
+
+# Deep learning learnings
 A supervised deep learning algorithm will generally achieve acceptable performance with around 5000 labeled examples per 
 category and will match or exceed human level performance when trained on a dataset containing at least 10 million data examples.
 
