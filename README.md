@@ -96,3 +96,8 @@ through modules called residual models
 A supervised deep learning algorithm will generally achieve acceptable performance with around 5000 labeled examples per 
 category and will match or exceed human level performance when trained on a dataset containing at least 10 million data examples.
 
+though the current networks seem large from computational point of view, in fact are quite smaller than most of the primitive life forms like frogs.
+
+RNNs such as LSTM sequence model used to model relationship between sequences and other sequences rather than fixed inputs.
+
+Reinforcement learning for making autonomous systems learn to perform tasks by trial and error
