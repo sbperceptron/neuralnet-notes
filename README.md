@@ -1,3 +1,9 @@
+# Deep learning software libraries
+Theano 
+Torch
+Caffe
+MXnet
+Tesorflow
 # Neuralnet-notes
 notes on neuralnetworks
 
